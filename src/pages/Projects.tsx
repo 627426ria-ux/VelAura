@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, ArrowRight, Calendar, Tag, Zap, Award, TrendingUp } from 'lucide-react';
 import ParticleField from '@/components/cinematic/ParticleField';
+import Navigation from '@/components/layout/Navigation';
 
 const Projects = () => {
   const containerRef = useRef(null);
@@ -31,9 +32,7 @@ const Projects = () => {
       features: [
         "Product catalog with advanced filtering",
         "Real-time inventory management",
-        "Multi-language support",
         "Automated email notifications",
-        "Admin dashboard with analytics"
       ],
       gradient: "from-cyan-500 to-blue-500",
       glowColor: "hsl(180 80% 55% / 0.4)",
@@ -46,6 +45,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* PARTICLE FIELD BACKGROUND - EXACT FROM HERO */}
+      <Navigation />
       <ParticleField />
 
       {/* CONTENT */}

@@ -4,11 +4,12 @@ import Navigation from "@/components/layout/Navigation";  // ← ADD THIS
 
 import CinematicHero from "@/components/cinematic/CinematicHero";
 import StudioManifesto from "@/components/cinematic/StudioManifesto";
+
 import ServicesShowcase from "@/components/cinematic/ServicesShowcase";
-import PricingCards from "@/components/cinematic/PricingCards";
 import PortfolioParallax from "@/components/cinematic/PortfolioParallax";
 import TestimonialsGlass from "@/components/cinematic/TestimonialsGlass";
 import ContactFinale from "@/components/cinematic/ContactFinale";
+import RoadTripJourney from "@/components/cinematic/ContactPage";
 
 const Index = () => {
   return (
@@ -20,8 +21,6 @@ const Index = () => {
       <main className="relative z-10">
         <CinematicHero />
         <StudioManifesto />
-        <ServicesShowcase />
-        <PricingCards />
         <PortfolioParallax />
         <TestimonialsGlass />
         <ContactFinale />

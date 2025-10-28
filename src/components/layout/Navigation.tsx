@@ -14,9 +14,9 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -69,8 +69,13 @@ const Navigation = () => {
           backdrop-filter: blur(20px);
         }
 
-        .bg-gradient-to-r {
-          background: linear-gradient(90deg, hsl(180 80% 55%), hsl(270 70% 60%), hsl(190 85% 50%));
+        .white-button {
+          background: #ffffff;
+          color: #0a0a0f;
+        }
+
+        .white-button:hover {
+          box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
         }
       `}</style>
 
@@ -85,18 +90,16 @@ const Navigation = () => {
             
             {/* Logo */}
             <motion.a
-              href="#"
-              className="flex items-center gap-2 group"
+              href="/"
+              className="flex items-center gap-3 group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-r flex items-center justify-center"
-              >
-                <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" />
-              </motion.div>
+              <img 
+                src="/logo.png" 
+                alt="CODMAC Logo" 
+                className="h20 md:h-32 w-auto object-contain"
+              />
               
             </motion.a>
 
@@ -123,15 +126,16 @@ const Navigation = () => {
               transition={{ delay: 0.5, duration: 0.5 }}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 0 30px hsl(180 80% 55% / 0.5)"
+                boxShadow: "0 0 30px rgba(255, 255, 255, 0.5)"
               }}
               whileTap={{ scale: 0.95 }}
-              className="hidden md:block px-6 py-2.5 rounded-full bg-gradient-to-r text-white font-semibold text-sm relative overflow-hidden group"
+              className="hidden md:block px-6 py-2.5 rounded-full white-button font-semibold text-sm relative overflow-hidden group"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <span className="relative z-10">Get Started</span>
               <motion.div
                 className="absolute inset-0"
-                style={{ background: 'rgba(255, 255, 255, 0.2)' }}
+                style={{ background: 'rgba(0, 0, 0, 0.1)' }}
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
                 transition={{ duration: 0.6 }}
@@ -191,7 +195,11 @@ const Navigation = () => {
               }}
               transition={{ delay: 0.3 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-3 rounded-full bg-gradient-to-r text-white font-semibold text-base mt-4"
+              className="w-full px-6 py-3 rounded-full white-button font-semibold text-base mt-4"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Get Started
             </motion.button>

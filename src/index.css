@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     --background: 220 25% 8%;
@@ -17,16 +13,16 @@ All colors MUST be HSL.
     --popover: 220 20% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 180 80% 55%;
+    --primary: 0 0% 100%;  /* Changed to white */
     --primary-foreground: 220 25% 8%;
 
-    --secondary: 270 70% 60%;
+    --secondary: 0 0% 100%;  /* Changed to white */
     --secondary-foreground: 0 0% 98%;
 
     --muted: 220 15% 20%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 190 85% 50%;
+    --accent: 0 0% 100%;  /* Changed to white */
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,20 +30,20 @@ All colors MUST be HSL.
 
     --border: 220 15% 20%;
     --input: 220 15% 20%;
-    --ring: 180 80% 55%;
+    --ring: 0 0% 100%;  /* Changed to white */
 
     --radius: 1rem;
     
-    /* Cinematic gradient tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(180 80% 55%), hsl(270 70% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(270 70% 60%), hsl(190 85% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(180 80% 55% / 0.15), hsl(270 70% 60% / 0.15), hsl(190 85% 50% / 0.15));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(180 80% 55% / 0.3), transparent 70%);
+    /* White gradient tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 100%), hsl(0 0% 90%));
+    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 95%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100% / 0.15), hsl(0 0% 100% / 0.15), hsl(0 0% 100% / 0.15));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(0 0% 100% / 0.3), transparent 70%);
     
-    /* Neon shadow tokens */
-    --shadow-neon-teal: 0 0 20px hsl(180 80% 55% / 0.5), 0 0 40px hsl(180 80% 55% / 0.3);
-    --shadow-neon-purple: 0 0 20px hsl(270 70% 60% / 0.5), 0 0 40px hsl(270 70% 60% / 0.3);
-    --shadow-neon-cyan: 0 0 20px hsl(190 85% 50% / 0.5), 0 0 40px hsl(190 85% 50% / 0.3);
+    /* White shadow tokens */
+    --shadow-neon-teal: 0 0 20px hsl(0 0% 100% / 0.5), 0 0 40px hsl(0 0% 100% / 0.3);
+    --shadow-neon-purple: 0 0 20px hsl(0 0% 100% / 0.5), 0 0 40px hsl(0 0% 100% / 0.3);
+    --shadow-neon-cyan: 0 0 20px hsl(0 0% 100% / 0.5), 0 0 40px hsl(0 0% 100% / 0.3);
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     
     /* Animation tokens */
@@ -56,19 +52,12 @@ All colors MUST be HSL.
     --transition-cinematic: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -77,9 +66,9 @@ All colors MUST be HSL.
     --foreground: 220 15% 15%;
     --card: 0 0% 100%;
     --card-foreground: 220 15% 15%;
-    --primary: 180 80% 45%;
-    --secondary: 270 70% 50%;
-    --accent: 190 85% 40%;
+    --primary: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --accent: 0 0% 100%;
     --muted: 220 15% 96%;
     --border: 220 15% 92%;
   }
@@ -121,7 +110,8 @@ All colors MUST be HSL.
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+    /* Changed to white gradient */
+    background-image: linear-gradient(135deg, #ffffff, #f0f0f0, #ffffff);
     background-size: 200% 200%;
   }
   
@@ -144,4 +134,17 @@ All colors MUST be HSL.
   .cinematic-shadow {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   }
+}
+/* FORCE all gradients to white - ADD THIS AT THE END */
+.text-gradient {
+  background: #ffffff !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: #ffffff !important;
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 
+               0 0 40px rgba(255, 255, 255, 0.3) !important;
 }
