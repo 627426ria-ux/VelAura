@@ -93,14 +93,14 @@ const Navigation = () => {
             {/* Logo */}
             <motion.a
               href="/"
-              className="flex items-center gap-3 group -ml-2 sm:-ml-4"
+              className="flex items-center gap-3 group md:-ml-4"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <img 
                 src="/logo.png" 
                 alt="CODMAC Logo" 
-                className="h30 md:h-40 w-auto object-contain"
+                className="h-16 sm:h-20 md:h-32 lg:h-40 w-auto object-contain"
               />
               
             </motion.a>
