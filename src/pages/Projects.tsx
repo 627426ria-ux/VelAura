@@ -278,8 +278,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex-1 px-8 py-4 rounded-full bg-gradient-to-r from-primary via-secondary to-accent text-center font-semibold text-lg group relative overflow-hidden"
-                        >
+                          className="flex-1 px-8 py-4 rounded-full bg-white text-gray-900 text-center font-semibold text-lg group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"                        >
                           <span className="relative z-10 flex items-center justify-center gap-2">
                             View Live Site
                             <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -313,8 +312,7 @@ const Projects = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-5 rounded-full bg-gradient-to-r from-primary via-secondary to-accent font-bold text-xl group relative overflow-hidden"
-              >
+                className="flex-1 px-8 py-4 rounded-full bg-white text-gray-900 text-center font-semibold text-lg group relative overflow-hidden shadow-lg hover:shadow-2xl transition-shadow"              >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Start Your Project
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />

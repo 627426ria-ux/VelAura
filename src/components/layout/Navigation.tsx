@@ -23,14 +23,14 @@ const Navigation = () => {
     <>
       <style>{`
         .nav-glass {
-          background: ${isScrolled 
-            ? 'rgba(10, 10, 15, 0.8)' 
-            : 'rgba(10, 10, 15, 0.3)'};
-          backdrop-filter: blur(20px);
-          border-bottom: 1px solid ${isScrolled 
-            ? 'rgba(255, 255, 255, 0.1)' 
-            : 'rgba(255, 255, 255, 0.05)'};
-        }
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    transition: none;
+  }
+
+
+
 
         .nav-link {
           position: relative;
@@ -85,62 +85,46 @@ const Navigation = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="nav-glass fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="w-full px-0 mx-0">
+
+        <div className="relative flex items-center justify-between h-16 md:h-20">
+
             
             {/* Logo */}
             <motion.a
               href="/"
-              className="flex items-center gap-3 group"
+              className="flex items-center gap-3 group -ml-2 sm:-ml-4"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <img 
                 src="/logo.png" 
                 alt="CODMAC Logo" 
-                className="h20 md:h-32 w-auto object-contain"
+                className="h30 md:h-40 w-auto object-contain"
               />
               
             </motion.a>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  className="nav-link text-sm font-medium tracking-wide"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.5 }}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
-            </div>
+            {/* Desktop Navigation - Centered */}
+<div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+  {navLinks.map((link, index) => (
+    <motion.a
+      key={link.name}
+      href={link.href}
+      className="nav-link text-sm font-medium tracking-wide"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 * index, duration: 0.5 }}
+    >
+      {link.name}
+    </motion.a>
+  ))}
+</div>
+
 
             {/* CTA Button - Desktop */}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.5 }}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 0 30px rgba(255, 255, 255, 0.5)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:block px-6 py-2.5 rounded-full white-button font-semibold text-sm relative overflow-hidden group"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <span className="relative z-10">Get Started</span>
-              <motion.div
-                className="absolute inset-0"
-                style={{ background: 'rgba(0, 0, 0, 0.1)' }}
-                initial={{ x: '-100%' }}
-                whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
-              />
-            </motion.button>
+            
 
             {/* Mobile Menu Button */}
             <motion.button
@@ -187,22 +171,7 @@ const Navigation = () => {
             ))}
             
             {/* Mobile CTA Button */}
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: isMobileMenuOpen ? 1 : 0, 
-                y: isMobileMenuOpen ? 0 : 20 
-              }}
-              transition={{ delay: 0.3 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full px-6 py-3 rounded-full white-button font-semibold text-base mt-4"
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get Started
-            </motion.button>
+            
           </div>
         </motion.div>
       </motion.nav>

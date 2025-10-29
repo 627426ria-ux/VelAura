@@ -97,22 +97,7 @@ const AboutUs = () => {
           ref={heroRef}
           className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
-          {/* Animated gradient background */}
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              background: 'radial-gradient(circle at 50% 50%, hsl(180 80% 55% / 0.15), hsl(270 70% 60% / 0.1), transparent)',
-            }}
-            animate={{
-              scale: [1, 1.2, 1],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
+          
 
           {/* Glowing orbs */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
@@ -143,7 +128,7 @@ const AboutUs = () => {
                   {/* Photo container with glass morphism */}
                   <div className="relative glass-morphism neon-border rounded-3xl overflow-hidden cinematic-shadow aspect-[3/4]">
                     <img 
-                      src="/profile.png"
+                      src="/logo2.png"
                       alt="Shells & Scales Exports Web Studio"
                       className="w-full h-full object-cover object-top"
                     />

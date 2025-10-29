@@ -73,22 +73,7 @@ const CinematicHero = () => {
         ref={containerRef}
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        {/* Animated gradient background */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1), transparent)',
-          }}
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
+        
 
         {/* Glowing orbs */}
         <motion.div 
@@ -190,7 +175,7 @@ const CinematicHero = () => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="relative white-text white-glow"
                 style={{
-                  fontSize: 'clamp(3.5rem, 15vw, 9rem)',
+                  fontSize: 'clamp(3.5rem, 10vw, 7rem)',
                   fontWeight: 'bold',
                   lineHeight: 1,
                   color: whiteColor
@@ -218,33 +203,7 @@ const CinematicHero = () => {
             </motion.div>
 
             {/* Tagline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3, duration: 0.8 }}
-              className="space-y-4"
-            >
-              <p className="muted-text" style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)', fontWeight: 300 }}>
-                Where{' '}
-                <motion.span
-                  className="white-text"
-                  style={{ fontWeight: 600 }}
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  velocity
-                </motion.span>
-                {' '}meets{' '}
-                <motion.span
-                  className="white-text"
-                  style={{ fontWeight: 600 }}
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                >
-                  aura
-                </motion.span>
-              </p>
-            </motion.div>
+            
 
             {/* Description */}
             <motion.p
@@ -254,9 +213,8 @@ const CinematicHero = () => {
               className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
               style={{ color: 'rgba(255, 255, 255, 0.6)' }}
             >
-              Crafting digital experiences that move at the speed of imagination. 
-              We blend cutting-edge technology with artistic vision to create 
-              web solutions that captivate, engage, and inspire.
+              Define your brand with clarity and precision.<br></br>
+               We craft visual identities that speak boldly and connect globally.
             </motion.p>
 
             {/* CTA Buttons */}

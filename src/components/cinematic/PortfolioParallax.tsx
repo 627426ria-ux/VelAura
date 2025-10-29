@@ -80,10 +80,7 @@ const PortfolioParallax = () => {
                   View Live
                   <ExternalLink className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
-                <Button variant="outline" className="flex-1 group/btn">
-                  Details
-                  <Github className="ml-2 w-4 h-4 transition-transform group-hover/btn:rotate-12" />
-                </Button>
+                
               </div>
             </motion.div>
           </motion.div>

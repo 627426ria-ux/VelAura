@@ -7,9 +7,9 @@ import StudioManifesto from "@/components/cinematic/StudioManifesto";
 
 import ServicesShowcase from "@/components/cinematic/ServicesShowcase";
 import PortfolioParallax from "@/components/cinematic/PortfolioParallax";
-import TestimonialsGlass from "@/components/cinematic/TestimonialsGlass";
+// import TestimonialsGlass from "@/components/cinematic/TestimonialsGlass";
 import ContactFinale from "@/components/cinematic/ContactFinale";
-import RoadTripJourney from "@/components/cinematic/ContactPage";
+import RoadTripJourney from "@/pages/Contact";
 
 const Index = () => {
   return (
@@ -22,7 +22,7 @@ const Index = () => {
         <CinematicHero />
         <StudioManifesto />
         <PortfolioParallax />
-        <TestimonialsGlass />
+        {/* <TestimonialsGlass /> */}
         <ContactFinale />
       </main>
     </div>

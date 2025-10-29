@@ -7,7 +7,8 @@ import Index from "./pages/Index";
 import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
-import Services  from "./pages/Services";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";  // ADD THIS IMPORT
 
 const queryClient = new QueryClient();
 
@@ -17,13 +18,14 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <Routes>
-  <Route path="/" element={<Index />} />
-  <Route path="/about" element={<AboutMe />} />
-  <Route path="/services" element={<Services />} />  {/* ADD THIS LINE */}
-  <Route path="/projects" element={<Projects />} />
-  <Route path="*" element={<NotFound />} />
-</Routes>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />  {/* ADD THIS ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
